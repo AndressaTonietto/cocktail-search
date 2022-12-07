@@ -7,16 +7,16 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Root from './routes/root';
 import Cocktail from './routes/cocktail';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />}>
+    <>
+      <Route path="/" element={<Root />}></Route>
       <Route path="cocktails/:cocktailId" element={<Cocktail />} />
-    </Route>
+    </>
   )
 );
 
