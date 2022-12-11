@@ -10,7 +10,7 @@ import {
 
 type DetailsProps = {
   drink?: DetailedCocktailProps;
-  ingredients: any;
+  ingredients: string[];
 };
 
 const CocktailDetails = ({ drink, ingredients }: DetailsProps) => (
@@ -23,14 +23,14 @@ const CocktailDetails = ({ drink, ingredients }: DetailsProps) => (
       <InfoContainer>
         <Ingredients>
           <span>Ingredients:</span>
-          {ingredients.map((ingredient: any) => ingredient).join(', ')}
+          {ingredients.map((ingredient) => ingredient).join(', ')}
         </Ingredients>
         <Instructions>
           <span>Instructions:</span>
           {drink?.strInstructions}
         </Instructions>
         <TagContainer>
-          {drink?.strTags?.split(',').map((item: any, index) => (
+          {drink?.strTags?.split(',').map((item, index) => (
             <Tag key={index}>{item}</Tag>
           ))}
         </TagContainer>
