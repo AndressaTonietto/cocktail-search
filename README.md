@@ -23,7 +23,6 @@ TheCocktailDB has a free public API which can be used for this assignment.
 
 - search for cocktails
 - see cocktail details
-- add cocktail to a favorites show list
 
 ## Setup
 
