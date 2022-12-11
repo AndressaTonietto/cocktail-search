@@ -30,8 +30,8 @@ const CocktailDetails = ({ drink, ingredients }: DetailsProps) => (
           {drink?.strInstructions}
         </Instructions>
         <TagContainer>
-          {drink?.strTags?.split(',').map((item: any) => (
-            <Tag>{item}</Tag>
+          {drink?.strTags?.split(',').map((item: any, index) => (
+            <Tag key={index}>{item}</Tag>
           ))}
         </TagContainer>
       </InfoContainer>

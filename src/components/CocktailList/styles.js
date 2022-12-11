@@ -3,8 +3,19 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 20px;
+  align-items: center;
+  margin: 0 20px 20px;
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+    margin: 20px;
+  }
+  @media screen and (min-width: 900px) {
+    max-width: 900px;
+    margin: 20px auto;
+  }
 `;
 
 export const StyledLink = styled(Link)`

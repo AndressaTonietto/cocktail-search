@@ -1,25 +1,22 @@
 import { useState } from 'react';
-import api from '../../services/api';
 import { Container } from './styles';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 
-type CocktailSearchProps = {
-  setDrinks: React.Dispatch<React.SetStateAction<CocktailProps[] | []>>;
-};
-
-const CocktailSearch = ({ setDrinks }: CocktailSearchProps) => {
+const CocktailSearch = () => {
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
-    try {
-      const url = `search.php?s=${query}`;
-      const res = await api.get(url);
-      setDrinks(res.data.drinks);
-    } catch (e) {
-      console.log(e);
-    }
+    const params = encodeURI(query);
+    navigate({
+      pathname: 'search',
+      search: createSearchParams({
+        query: params,
+      }).toString(),
+    });
   };
 
   return (

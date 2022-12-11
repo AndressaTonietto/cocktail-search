@@ -10,12 +10,21 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Root from './routes/root';
 import Cocktail from './routes/cocktail';
+import NotFound from './components/NotFound';
+import List from './routes/list';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Root />}></Route>
-      <Route path="cocktails/:cocktailId" element={<Cocktail />} />
+      <Route
+        path="/"
+        element={<Root />}
+        children={[
+          <Route path="search" element={<List />} />,
+          <Route path="cocktails/:cocktailId" element={<Cocktail />} />,
+        ]}
+      />
+      <Route path="*" element={<NotFound />} />
     </>
   )
 );

@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 
 export const Details = styled.div`
-  margin: 0 20px 20px;
   display: flex;
   flex-direction: column;
+  margin: 0 20px 20px;
   @media screen and (min-width: 600px) {
-    margin: 50px 20px;
+    margin: 20px;
   }
-  @media screen and (min-width: 1024px) {
-    max-width: 1024px;
-    margin: 50px auto;
+  @media screen and (min-width: 900px) {
+    max-width: 900px;
+    margin: 0px auto;
   }
 `;
 

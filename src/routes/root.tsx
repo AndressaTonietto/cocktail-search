@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import CocktailList from '../components/CocktailList';
+import { Outlet } from 'react-router-dom';
 import CocktailSearch from '../components/CocktailSearch';
 
 export default function Root() {
-  const [drinks, setDrinks] = useState<CocktailProps[] | []>([]);
-
   return (
     <>
-      <CocktailSearch setDrinks={setDrinks} />
-      <CocktailList drinks={drinks} />
+      <CocktailSearch />
+      <div id="detail">
+        <Outlet />
+      </div>
     </>
   );
 }
