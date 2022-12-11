@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container } from './styles';
+import { Button, Container } from './styles';
 import { createSearchParams, useNavigate } from 'react-router-dom';
 
 const CocktailSearch = () => {
@@ -30,7 +30,7 @@ const CocktailSearch = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button onClick={(event) => handleSubmit(event)}>Search</button>
+        <Button onClick={(event) => handleSubmit(event)}>Search</Button>
       </form>
     </Container>
   );

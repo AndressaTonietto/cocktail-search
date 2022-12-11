@@ -13,3 +13,9 @@ export const Container = styled.div`
     margin: 0px auto;
   }
 `;
+
+export const Button = styled.button`
+  background: black;
+  color: white;
+  border: 2px solid black;
+`;
