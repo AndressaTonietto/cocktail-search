@@ -6,19 +6,34 @@ import api from '../services/api';
 export default function List() {
   const [searchParams] = useSearchParams();
   const [drinks, setDrinks] = useState<CocktailProps[] | []>();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
     const handleSubmit = async () => {
+      setLoading(true);
+      setErrorMessage('');
+
       try {
         const url = `search.php?s=${searchParams.get('query')}`;
         const res = await api.get(url);
-        setDrinks(res.data.drinks);
+
+        if (res.data.drinks === null) setErrorMessage('No drinks found');
+        else setDrinks(res.data.drinks);
       } catch (e) {
-        console.log(e);
+        setErrorMessage('Something went wrong. Try again');
+      } finally {
+        setLoading(false);
       }
     };
     handleSubmit();
   }, [searchParams]);
 
-  return <CocktailList drinks={drinks} />;
+  return (
+    <CocktailList
+      drinks={drinks}
+      loading={loading}
+      errorMessage={errorMessage}
+    />
+  );
 }
