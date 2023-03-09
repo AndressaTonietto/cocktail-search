@@ -14,7 +14,7 @@ Simple Cocktail Search created with React.js and TypeScript.
 ## General info
 
 The assignment is to create a React web application which allows the user to search for
-information about COcktails, using [TheCocktailDB API](https://www.thecocktaildb.com/api.php). It should
+information about Coktails, using [TheCocktailDB API](https://www.thecocktaildb.com/api.php). It should
 show the search results in a list and allow the user to see more detailed information in
 another view.
 TheCocktailDB has a free public API which can be used for this assignment.
